@@ -13,20 +13,24 @@ Gracias a quienes hacen este proyecto posible y su respectivo crédito a:
  Copyright (C) Martín Berti (https://github.com/BertiRean)
 
 
-#########
+############
 #Milestones#
-#########
+############
+
 Milestone0.0: Adicion de codigo utilitario en general, que sirva como complemento a las funciones
-			  del API.  
-                
+			  del API.              
 Milestone1.0: Jugabilidad en general, comportamiento de objetos del juego
               y mejoras orientadas a el manejo de eventos del juego y la fisica
-              del juego.  
-                
+              del juego.
 Milestone2.0: Cambios relacionados con el manejo del apartado grafico y de sonido
-              de los juegos.  
-                
+              de los juegos.
 Milestone3.0: Traducciones para el porteo de los juegos a otros idiomas.  
   
 
 ############################
+
+################################
+# Apartado Grafico y de Sonido #
+################################
+- 2.1 Sky Defense -  
+2.1.0 - 10/10/2016: Configurado Background inicial y sonido inicial del juego por Berti

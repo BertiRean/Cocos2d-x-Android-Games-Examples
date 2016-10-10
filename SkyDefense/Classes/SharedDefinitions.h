@@ -1,0 +1,7 @@
+#ifndef __SHARED_DEFINITIONS_H
+#define __SHARED_DEFINITIONS_H
+
+
+
+#endif // !__SHARED_DEFINITIONS_H
+
