@@ -18,7 +18,7 @@ Gracias a quienes hacen este proyecto posible y su respectivo crédito a:
 ############
 
 Milestone0.0: Adicion de codigo utilitario en general, que sirva como complemento a las funciones
-			  del API.              
+			  del API y cambios generales con respecto a las config de compilacion.              
 Milestone1.0: Jugabilidad en general, comportamiento de objetos del juego
               y mejoras orientadas a el manejo de eventos del juego y la fisica
               del juego.
@@ -28,6 +28,12 @@ Milestone3.0: Traducciones para el porteo de los juegos a otros idiomas.
   
 
 ############################
+
+##################################################
+# Codigo utilitario y cambios generales a el API #
+##################################################
+- 0.1 Sky Defense -  
+0.1.0 - 22/10/2016: Añadido archivo Cmake con la informacion de compilacion por Berti
 
 ################################
 # Apartado Grafico y de Sonido #
