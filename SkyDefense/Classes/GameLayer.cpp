@@ -62,4 +62,18 @@ void GameLayer::settingScreen()
 
     _gameBatchNode->addChild(gameElement, BACKGROUND);
   }
+
+  // Drawing the trees for the background
+
+  for (int i = 0; i < 3; ++i)
+  {
+    Sprite* tree = Sprite::createWithSpriteFrameName("trees.png");
+
+    tree->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
+
+    tree->setPosition(Vec2(visibleSize.width * (0.2f + i * 0.3f), 
+                           0));
+
+    _gameBatchNode->addChild(tree, FOREGROUND);
+  }
 }
