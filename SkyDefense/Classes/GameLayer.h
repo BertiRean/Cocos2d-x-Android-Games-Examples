@@ -21,7 +21,7 @@ public:
     CREATE_FUNC(GameLayer)
 
 private:
-    void settingScreen();
+    void addGameElements();
 
     cocos2d::SpriteBatchNode* _gameBatchNode;
 

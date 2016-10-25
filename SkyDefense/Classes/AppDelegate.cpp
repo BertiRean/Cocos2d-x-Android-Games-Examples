@@ -88,28 +88,29 @@ void AppDelegate::settingScreen()
     GLView* glview = director->getOpenGLView();
     FileUtils* fileUtils = FileUtils::getInstance();
 
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
-    auto frameSize = glview->getFrameSize();
-    // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
+    Size designSize(2048, 1536);
+
+    glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::EXACT_FIT);
+
+    const Size & screenSize = glview->getFrameSize();
+
+    // If the device is a Tablet
+    if (screenSize.height > 768)
     {
         fileUtils->addSearchPath("xhd");
-        director->setContentScaleFactor(MIN(largeResolutionSize.height / designResolutionSize.height, 
-                                            largeResolutionSize.width / designResolutionSize.width));
+        director->setContentScaleFactor(largeResolutionSize.height/designSize.height);
     }
-    // if the frame's height is larger than the height of small size.
-    else if (frameSize.height > smallResolutionSize.height)
+    // If the device is a Phone with Hd Screen.
+    else if (screenSize.height > 320)
     {
         fileUtils->addSearchPath("hd");
-        director->setContentScaleFactor(MIN(mediumResolutionSize.height / designResolutionSize.height, 
-                                            mediumResolutionSize.width / designResolutionSize.width));
+		    director->setContentScaleFactor(mediumResolutionSize.height / designSize.height);
     }
-    // if the frame's height is smaller than the height of medium size.
+    // The device screen is a phone, with Simple Screen
     else
     {
         fileUtils->addSearchPath("sd");
-        director->setContentScaleFactor(MIN(smallResolutionSize.height / designResolutionSize.height, 
-                                            smallResolutionSize.width / designResolutionSize.width));
+        director->setContentScaleFactor(smallResolutionSize.height/designSize.height);
     }
 }
 

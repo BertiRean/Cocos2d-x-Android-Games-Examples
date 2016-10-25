@@ -20,14 +20,14 @@ bool GameLayer::init()
   if (!Layer::init())
       return false;
 
-  settingScreen();
+  addGameElements();
 
   SimpleAudioEngine::getInstance()->playBackgroundMusic("background.mp3", true);
 
   return true;
 }
 
-void GameLayer::settingScreen()
+void GameLayer::addGameElements()
 {
   Size visibleSize = Director::getInstance()->getVisibleSize();
 
