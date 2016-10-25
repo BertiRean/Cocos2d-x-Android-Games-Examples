@@ -37,8 +37,16 @@ void GameLayer::addGameElements()
 
   this->addChild(background);
 
+  createBackgroundElements();
+  createLabels();
+}
+
+void GameLayer::createBackgroundElements()
+{
+  const Size & visibleSize = Director::getInstance()->getVisibleSize();
+
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sprite_sheet.plist");
-  
+
   _gameBatchNode = SpriteBatchNode::create("sprite_sheet.png");
 
   this->addChild(_gameBatchNode);
@@ -71,9 +79,45 @@ void GameLayer::addGameElements()
 
     tree->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
 
-    tree->setPosition(Vec2(visibleSize.width * (0.2f + i * 0.3f), 
-                           0));
+    tree->setPosition(Vec2(visibleSize.width * (0.2f + i * 0.3f), 0));
 
     _gameBatchNode->addChild(tree, FOREGROUND);
   }
+
+  // Create the Clouds
+  for (uint8_t i = 0; i < 4; ++i)
+  {
+    float cloudCoordY = i % 2 ? visibleSize.height * 0.4f : visibleSize.height * 0.5f;
+
+    Sprite* cloud = Sprite::createWithSpriteFrameName("cloud.png");
+
+    cloud->setPosition(Vec2(visibleSize.width * 0.1f + i * visibleSize.height * 0.3f, cloudCoordY));
+
+    _gameBatchNode->addChild(cloud, BACKGROUND);
+
+    _clouds.pushBack(cloud);
+  }
+}
+
+void GameLayer::createLabels()
+{
+  const Size & visibleSize = Director::getInstance()->getVisibleSize();
+
+  _scoreLabel = Label::createWithBMFont("font.fnt", "0");
+
+  _scoreLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE_RIGHT);
+  _scoreLabel->setPosition(Vec2(visibleSize.width * 0.8f, visibleSize.height * 0.94f));
+
+  this->addChild(_scoreLabel);
+
+  _energyLabel = Label::createWithBMFont("font.fnt", "100%", TextHAlignment::RIGHT);
+  _energyLabel->setPosition(Vec2(visibleSize.width * 0.3f, visibleSize.height * 0.94f));
+
+  this->addChild(_energyLabel);
+
+  Sprite* healthIcon = Sprite::createWithSpriteFrameName("health_icon.png");
+
+  healthIcon->setPosition(Vec2(visibleSize.width * 0.15f, visibleSize.height * 0.94f));
+
+  _gameBatchNode->addChild(healthIcon, BACKGROUND);
 }

@@ -43,3 +43,4 @@ Milestone3.0: Traducciones para el porteo de los juegos a otros idiomas.
 2.1.1 - 23/10/2016: SkyDefense: Añadido el dibujado inicial del background de la ciudad por Berti
 2.1.2 - 23/10/2016: SkyDefense: Añadidos los sprites de los arboles y su dibujado por Berti
 2.1.3 - 24/10/2016: SkyDefense: Corregido el factor de escala del contenido, ahora se vera correctamente en todas las pantallas por Berti
+2.1.4 - 25/10/2016: SkyDefense: Creada las labels del juego, y añadidas las clouds al background en posiciones estaticas por Berti
