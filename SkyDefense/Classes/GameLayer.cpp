@@ -29,7 +29,7 @@ bool GameLayer::init()
 
 void GameLayer::addGameElements()
 {
-  Size visibleSize = Director::getInstance()->getVisibleSize();
+  const Size & visibleSize = Director::getInstance()->getVisibleSize();
 
   Sprite* background = Sprite::create("bg.png");
 
