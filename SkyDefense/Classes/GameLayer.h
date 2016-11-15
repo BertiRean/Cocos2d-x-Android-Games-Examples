@@ -27,12 +27,15 @@ private:
     void createLabels();
 
     cocos2d::SpriteBatchNode* _gameBatchNode;
+    
     cocos2d::Label* _scoreLabel; 
     cocos2d::Label* _energyLabel;
 
     cocos2d::Vector<cocos2d::Sprite*> _clouds;
 
     cocos2d::Sprite* _bomb;
+    cocos2d::Sprite* _introMessage;
+    cocos2d::Sprite* _gameOverMessage;
 
 };
 

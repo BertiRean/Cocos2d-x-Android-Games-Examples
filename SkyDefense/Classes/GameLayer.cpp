@@ -108,6 +108,25 @@ void GameLayer::createBackgroundElements()
 
     _clouds.pushBack(cloud);
   }
+
+  _introMessage = Sprite::createWithSpriteFrameName("logo.png");
+
+  _introMessage->setPosition(Vec2(visibleSize.width * 0.5f, 
+                                  visibleSize.height * 0.6f));
+
+  _introMessage->setVisible(true);
+
+  this->addChild(_introMessage, FOREGROUND);
+
+  _gameOverMessage = Sprite::createWithSpriteFrameName("gameover.png");
+
+  _gameOverMessage->setPosition(Vec2(visibleSize.width * 0.5f, 
+                                  visibleSize.height * 0.65f));
+
+  _gameOverMessage->setVisible(false);
+  
+  this->addChild(_gameOverMessage, FOREGROUND);
+
 }
 
 void GameLayer::createLabels()
@@ -131,4 +150,5 @@ void GameLayer::createLabels()
   healthIcon->setPosition(Vec2(visibleSize.width * 0.15f, visibleSize.height * 0.94f));
 
   _gameBatchNode->addChild(healthIcon, BACKGROUND);
+
 }
