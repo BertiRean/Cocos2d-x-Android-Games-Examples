@@ -55,6 +55,9 @@ void GameLayer::createBackgroundElements()
   {
     Sprite* gameElement = Sprite::createWithSpriteFrameName("city_dark.png");
 
+    if(gameElement == nullptr)
+      continue;
+
     gameElement->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
 
     gameElement->setPosition(visibleSize.width * (0.25f + i * 0.5f), 0);
@@ -62,6 +65,9 @@ void GameLayer::createBackgroundElements()
     _gameBatchNode->addChild(gameElement, FOREGROUND);
 
     gameElement = Sprite::createWithSpriteFrameName("city_light.png");
+
+    if(gameElement == nullptr)
+      continue;
 
     gameElement->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
 
@@ -77,6 +83,8 @@ void GameLayer::createBackgroundElements()
   {
     Sprite* tree = Sprite::createWithSpriteFrameName("trees.png");
 
+    if(tree == nullptr)
+
     tree->setAnchorPoint(Vec2::ANCHOR_MIDDLE_BOTTOM);
 
     tree->setPosition(Vec2(visibleSize.width * (0.2f + i * 0.3f), 0));
@@ -90,6 +98,9 @@ void GameLayer::createBackgroundElements()
     float cloudCoordY = i % 2 ? visibleSize.height * 0.4f : visibleSize.height * 0.5f;
 
     Sprite* cloud = Sprite::createWithSpriteFrameName("cloud.png");
+
+    if(cloud == nullptr)
+      continue;
 
     cloud->setPosition(Vec2(visibleSize.width * 0.1f + i * visibleSize.height * 0.3f, cloudCoordY));
 
